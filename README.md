@@ -8,9 +8,14 @@ Why did I make this? I don't know. I was bored one night, and this helped teach 
 
 ## Usage
 
-1. Clone the files: `git clone https://KenanY@github.com/KenanY/Pastebin-Domains-Center-AutoSubmitter.git`
+1. Clone the files: `git clone git://github.com/KenanY/Pastebin-Domains-Center-AutoSubmitter.git`
 2. If you want, get an updated list of top 1 million websites by downloading [Alexa's list](http://s3.amazonaws.com/alexa-static/top-1m.csv.zip). You'll need to unzip the archive, then convert the list to a txt file (don't change its name, or you'll break stuff).
 3. Run `main.py`  
 4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down
 5. ????
 6. PROFIT!! (okay, not really)
+
+## License
+
+The code is licensed under the GNU Affero GPL, version 3
+(http://www.gnu.org/licenses/agpl.html), and copyright Kenan Yildirim, 011
