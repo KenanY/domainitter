@@ -14,8 +14,3 @@ Why did I make this? I don't know. I was bored one night, and this helped teach 
 4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down
 5. ????
 6. PROFIT!! (okay, not really)
-
-## License
-
-The code is licensed under the GNU Affero GPL, version 3
-(http://www.gnu.org/licenses/agpl.html), and copyright Kenan Yildirim, 011
