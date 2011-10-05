@@ -1,4 +1,4 @@
-# # domainitter 
+# domainitter 
 (formerly "Pastebin-Domains-Center-AutoSubmitter")
 
 ## WARNING ##
