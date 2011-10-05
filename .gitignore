@@ -1,0 +1,40 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+
+# Folder config file
+Desktop.ini
+
+# Python
+*.py[co]
+*.egg
+*.egg-info
+.installed.cfg
+pip-log.txt
+.coverage
+.tox
+*.mo
+.mr.developer.cfg

@@ -1,9 +1,10 @@
-# domainitter 
+# # domainitter 
 (formerly "Pastebin-Domains-Center-AutoSubmitter")
 
 ## WARNING ##
 ### Pastebin has banned my IP address because this script spams their servers! 
-###I will no longer be working on it, and I highly recommend that you do not use it.
+### I will no longer be actively working on it.
+### USE AT YOUR OWN RISK.
 
 ## About
 This is a simple Python script which uses the list of [top one million sites according to Alexa.com][1] and submits them to [Pastebin's domains center][2]. I know the accuracy of Alexa's rankings are [not][4] [so][5] [good][6], but it doesn't matter for this script. All I needed was a large list of websites (and one million is quite enough).
@@ -12,7 +13,8 @@ I created this because I was bored one night.
 
 ## Usage
 
-1. Fork [the repository][7] to get the files  
+1. Clone [the repository][7] to get the files  
+    `git clone git://github.com/KenanY/domainitter.git`
 2. If you want, get an updated list of the top one million websites by downloading [Alexa.com's list][3]. You'll need to unzip the archive, then convert the list to a plaintext file (don't change its name, or you'll break stuff).
 3. Run `domainitter.py`  
 4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down  

@@ -1,18 +1,10 @@
 """
-Copyright (C) 2011  Kenan Yildirim
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* Domainitter - A Pastebin site auto-submitter
+*
+* Licensed under the MIT:
+* http://www.opensource.org/licenses/mit-license.php
+*
+* Copyright (c) 2011, Kenan Yildirim
 """
 
 import httplib
@@ -42,18 +34,9 @@ if os.path.isfile('top-1m.txt'):
     entries = re.split("\n+", input)
 else:
     print '''###    Error!    ###
-    Could not find website list!
-    Make sure it is named "top-1m.txt" (without the quotes)
-    If you don't have the list, download this file from Alexa:
-        http://is.gd/AlexaList
-    After that, unzip the file,
-    open it in a text editor,
-    and save it as a .txt file.
-    Then try re-running this script.
-    The script will automatically abort in 5 minutes,
-    I'm sure you can read that fast.'''
-    time.sleep(300)
-    exit(0)
+    Could not find website list!'''
+    while True:
+        pass
     
 print '''Done!
 \n
