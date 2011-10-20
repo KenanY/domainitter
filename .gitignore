@@ -1,17 +1,9 @@
-# Windows #
-###########
 Thumbs.db
 Desktop.ini
-
-# OSX #
-#######
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
-
-# Python #
-##########
 *.py[co]
 *.egg
 *.egg-info

@@ -9,7 +9,7 @@
 ## About
 This is a simple Python script which uses the list of [top one million sites according to Alexa.com][1] and submits them to [Pastebin's domains center][2]. I know the accuracy of Alexa's rankings are [not][4] [so][5] [good][6], but it doesn't matter for this script. All I needed was a large list of websites (and one million is quite enough).
 
-I created this because I was bored one night.
+This script serves no useful purpose unless you hate them and want to DDoS them in a minor way or something....
 
 ## Usage
 

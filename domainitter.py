@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 * Domainitter - A Pastebin site auto-submitter
 *
@@ -23,45 +25,40 @@ def submit_site(query):
     conn.request("GET", "/domain_update.php?q=" + query + "&f=1")
     conn.close()
 
-print '''#####   domainitter   #####
-By KenanY
-https://github.com/KenanY
-\n
-Parsing website list...'''
+def main():
+    print 'Parsing website list...'
+    if os.path.isfile('top-1m.txt'):
+        input = open("top-1m.txt").read()
+        entries = re.split("\n+", input)
+    else:
+        print 'Error: could not find website list!'
+        while True:
+            pass
+        
+    print '''Done!\n
+    Time to make a choice: 
+    [1] Randomly select which websites to submit
+    [2] Start from the most popular site, then work downwards'''
+    answer = raw_input("> ")
+    print '\n'
+    if '1' in answer:
+        print 'Randomly selecting sites!'
+        print '=========='
+        scraps = 1
+        while scraps < 1000000:
+            entryLine = re.split("[\W]?", entries[random.randint(1,1000000)], 1)
+            submit_site(entryLine[1])
+            print "[%s] %s (#%s)" % (split_thousands(str(scraps)), entryLine[1], split_thousands(entryLine[0]))
+            scraps += 1
+    elif '2' in answer:
+        print 'Starting from the top sites!'
+        print '=========='
+        for entry in entries:
+            entryLine = re.split("[\W]?", entry, 1)
+            submit_site(entryLine[1])
+            print "[%s] %s" % (str(split_thousands(entryLine[0])), entryLine[1])
+    else:
+        print 'Learn to make choices!'
 
-if os.path.isfile('top-1m.txt'):
-    input = open("top-1m.txt").read()
-    entries = re.split("\n+", input)
-else:
-    print '''###    Error!    ###
-    Could not find website list!'''
-    while True:
-        pass
-    
-print '''Done!
-\n
-Time to make a choice: 
-[1] Randomly select which websites to submit
-[2] Start from the most popular site, then work downwards'''
-answer = raw_input("> ")
-print '\n'
-
-if '1' in answer:
-    print 'Randomly selecting sites!'
-    print '=========='
-    scraps = 1
-    while scraps < 1000000:
-        entryLine = re.split("[\W]?", entries[random.randint(1,1000000)], 1)
-        submit_site(entryLine[1])
-        print "[%s] %s (#%s)" % (split_thousands(str(scraps)), entryLine[1], split_thousands(entryLine[0]))
-        scraps += 1
-elif '2' in answer:
-    print 'Starting from the top sites!'
-    print '=========='
-    for entry in entries:
-        entryLine = re.split("[\W]?", entry, 1)
-        submit_site(entryLine[1])
-        print "[%s] %s" % (str(split_thousands(entryLine[0])), entryLine[1])
-else:
-    print 'Learn to make choices!'
-    exit(0)
+if __name__ == "__main__":
+    exit(main())
