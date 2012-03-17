@@ -9,11 +9,11 @@
 * Copyright (c) 2011, Kenan Yildirim
 """
 
-import httplib
 import os.path
 import random
 import re
 import time
+from httplin import HTTPConnection
 from sys import exit
 
 def split_thousands(s, sep=','):     # Borrowed from http://code.activestate.com/recipes/498181/#c4
@@ -21,8 +21,8 @@ def split_thousands(s, sep=','):     # Borrowed from http://code.activestate.com
     return split_thousands(s[:-3], sep) + sep + s[-3:]
 
 def submit_site(query):
-    conn = httplib.HTTPConnection("www.pastebin.com")
-    conn.request("GET", "/domain_update.php?q=" + query + "&f=1")
+    conn = HTTPConnection("www.pastebin.com")
+    conn.request("GET", "/domain_update.php?q=%s&f=1" % query)
     conn.close()
 
 def main():
