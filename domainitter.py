@@ -17,7 +17,7 @@ from httplib import HTTPConnection
 from sys import exit
 
 def split_thousands(s, sep=','):     # Borrowed from http://code.activestate.com/recipes/498181/#c4
-    if len(s) <= 3: return s  
+    if len(s) <= 3: return s
     return split_thousands(s[:-3], sep) + sep + s[-3:]
 
 def submit_site(query):
@@ -34,9 +34,9 @@ def main():
         print 'Error: could not find website list!'
         while True:
             pass
-        
+
     print '''Done!\n
-    Time to make a choice: 
+    Time to make a choice:
     [1] Randomly select which websites to submit
     [2] Start from the most popular site, then work downwards'''
     answer = raw_input("> ")
