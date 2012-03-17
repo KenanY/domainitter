@@ -13,7 +13,7 @@ import os.path
 import random
 import re
 import time
-from httplin import HTTPConnection
+from httplib import HTTPConnection
 from sys import exit
 
 def split_thousands(s, sep=','):     # Borrowed from http://code.activestate.com/recipes/498181/#c4
