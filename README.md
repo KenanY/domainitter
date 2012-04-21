@@ -1,6 +1,8 @@
-# domainitter
+# domainitter 
 
 (formerly "Pastebin-Domains-Center-AutoSubmitter")
+
+[![Build Status](https://secure.travis-ci.org/KenanY/domainitter.png?branch=master)](http://travis-ci.org/KenanY/domainitter)
 
 ## WARNING:
 
