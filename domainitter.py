@@ -14,6 +14,7 @@ import random
 import re
 import time
 from httplib import HTTPConnection
+from sys import argv
 from sys import exit
 
 
@@ -30,15 +31,19 @@ def submit_site(query):
     conn.close()
 
 
-def main():
+def main(args):
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
         input = open("top-1m.txt").read()
         entries = re.split("\n+", input)
     else:
         print 'Error: could not find website list!'
-        while True:
-            pass
+        exit()
+
+    if args[0]:
+        scrapsMax = int(args[0])
+    else:
+        scrapsMax = 1000000
 
     print '''Done!\n
     Time to make a choice:
@@ -50,7 +55,7 @@ def main():
         print 'Randomly selecting sites!'
         print '=========='
         scraps = 1
-        while scraps < 1000000:
+        while scraps <= scrapsMax:
             entryLine = re.split("[\W]?",
                                  entries[random.randint(1, 1000000)],
                                  1)
@@ -59,17 +64,21 @@ def main():
                                      entryLine[1],
                                      split_thousands(entryLine[0]))
             scraps += 1
+        exit()
     elif '2' in answer:
         print 'Starting from the top sites!'
         print '=========='
         for entry in entries:
             entryLine = re.split("[\W]?", entry, 1)
-            submit_site(entryLine[1])
-            print "[%s] %s" % (str(split_thousands(entryLine[0])),
+            if int(entryLine[0]) <= scrapsMax:
+                submit_site(entryLine[1])
+                print "[%s] %s" % (str(split_thousands(entryLine[0])),
                                    entryLine[1])
+            else:
+                exit()
     else:
         print 'Learn to make choices!'
 
 
 if __name__ == "__main__":
-    exit(main())
+    exit(main(argv[1:]))
