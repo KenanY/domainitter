@@ -16,14 +16,19 @@ import time
 from httplib import HTTPConnection
 from sys import exit
 
-def split_thousands(s, sep=','):     # Borrowed from http://code.activestate.com/recipes/498181/#c4
-    if len(s) <= 3: return s
+
+def split_thousands(s, sep=','):
+    """ Borrowed from http://code.activestate.com/recipes/498181/#c4 """
+    if len(s) <= 3:
+        return s
     return split_thousands(s[:-3], sep) + sep + s[-3:]
+
 
 def submit_site(query):
     conn = HTTPConnection("www.pastebin.com")
     conn.request("GET", "/domain_update.php?q=%s&f=1" % query)
     conn.close()
+
 
 def main():
     print 'Parsing website list...'
@@ -46,9 +51,13 @@ def main():
         print '=========='
         scraps = 1
         while scraps < 1000000:
-            entryLine = re.split("[\W]?", entries[random.randint(1,1000000)], 1)
+            entryLine = re.split("[\W]?",
+                                 entries[random.randint(1, 1000000)],
+                                 1)
             submit_site(entryLine[1])
-            print "[%s] %s (#%s)" % (split_thousands(str(scraps)), entryLine[1], split_thousands(entryLine[0]))
+            print "[%s] %s (#%s)" % (split_thousands(str(scraps)),
+                                     entryLine[1],
+                                     split_thousands(entryLine[0]))
             scraps += 1
     elif '2' in answer:
         print 'Starting from the top sites!'
@@ -56,9 +65,11 @@ def main():
         for entry in entries:
             entryLine = re.split("[\W]?", entry, 1)
             submit_site(entryLine[1])
-            print "[%s] %s" % (str(split_thousands(entryLine[0])), entryLine[1])
+            print "[%s] %s" % (str(split_thousands(entryLine[0])),
+                                   entryLine[1])
     else:
         print 'Learn to make choices!'
+
 
 if __name__ == "__main__":
     exit(main())
