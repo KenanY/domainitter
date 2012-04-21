@@ -14,7 +14,7 @@ So, for whatever reason, Pastebin has something called [Domains Center][2]. You 
 
 ## Usage
 
-There are no dependencies for running `domainitter.py`, but you must use Python **2.5**, **2.6**, or **2.7**. This **does not work with Python 3**, because when porting to Python 3 I broke Python 2 compatibility, thus there will be no Python 3 compatibility.
+There are no dependencies for running `domainitter.py`, but you must use Python **2.5**, **2.6**, or **2.7**. This **does not work with Python 3**, because when porting to Python 3 I broke Python 2 compatibility, thus there will be no Python 3 support.
 
 1. Clone [the repository][4] to get the files  
     `git clone git://github.com/KenanY/domainitter.git`
@@ -24,11 +24,17 @@ There are no dependencies for running `domainitter.py`, but you must use Python 
 5. ????  
 6. PROFIT!!! (okay, not really)
 
-   [1]: http://www.alexa.com/topsites (Top Sites)
-   [2]: http://pastebin.com/domains (Pastebin - Domains Center)
-   [3]: http://s3.amazonaws.com/alexa-static/top-1m.csv.zip (Download Alexa's list of top websites)
-   [4]: https://github.com/KenanY/domainitter
-
 ## Contributing
 
-This is a really small project. You can easily work on master directing, no need for complicated branches.
+This is a really small project. You can easily hack on the `master` branch directly, so no need for complicated branches. Before you code a major change/feature (if there's such a thing possible for this script), open an issue in the [Issue Tracker][] so that we can discuss whether I'd be willing to accept such a change. This ensures that you don't go off wasting your time coding a feature I don't accept.
+
+Also, please keep `domainitter.py` [PEP 8][] compliant. Use the [pep8 tool][] to check your code.
+
+
+   [1]: http://www.alexa.com/topsites
+   [2]: http://pastebin.com/domains
+   [3]: http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
+   [4]: https://github.com/KenanY/domainitter
+   [Issue Tracker]: https://github.com/KenanY/domainitter/issues
+   [PEP 8]: http://www.python.org/dev/peps/pep-0008/
+   [pep8 tool]: http://pypi.python.org/pypi/pep8
