@@ -39,17 +39,22 @@ def main(args):
     else:
         print 'Error: could not find website list!'
         exit()
-
     if args[0]:
         scrapsMax = int(args[0])
     else:
         scrapsMax = 1000000
-
     print '''Done!\n
     Time to make a choice:
     [1] Randomly select which websites to submit
     [2] Start from the most popular site, then work downwards'''
-    answer = raw_input("> ")
+    autoKeyboard = False
+    for argc in args:
+        if argc == '--keyboard':
+            autoKeyboard = True
+    if autoKeyboard:
+        answer = '1'
+    else:
+        answer = raw_input("> ")
     print '\n'
     if '1' in answer:
         print 'Randomly selecting sites!'

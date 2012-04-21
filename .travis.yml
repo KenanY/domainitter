@@ -4,7 +4,6 @@ python:
   - 2.7
 install: pip install pep8 --use-mirrors
 script:
-  - python domainitter.py 20
-  - 1
+  - python domainitter.py 20 --keyboard
 notifications:
   email: false
