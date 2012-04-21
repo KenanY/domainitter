@@ -30,11 +30,15 @@ This is a really small project. You can easily hack on the `master` branch direc
 
 Also, please keep `domainitter.py` [PEP 8][] compliant. Use the [pep8 tool][] to check your code.
 
+Tests are run on [Travis CI][]. Pretty much the only test is simply running the script itself, except with the argument `--keyboard` in order to skip the user input portion of the script. The current build status is displayed as a little image near the top of this README. You can check out all the builds and test [here][5].
+
 
    [1]: http://www.alexa.com/topsites
    [2]: http://pastebin.com/domains
    [3]: http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
    [4]: https://github.com/KenanY/domainitter
+   [5]: http://travis-ci.org/KenanY/domainitter
    [Issue Tracker]: https://github.com/KenanY/domainitter/issues
    [PEP 8]: http://www.python.org/dev/peps/pep-0008/
    [pep8 tool]: http://pypi.python.org/pypi/pep8
+   [Travis CI]: http://travis-ci.org/
