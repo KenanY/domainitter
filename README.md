@@ -14,6 +14,8 @@ So, for whatever reason, Pastebin has something called [Domains Center][2]. You 
 
 ## Usage
 
+There are no dependencies for running `domainitter.py`, but you must use Python **2.5**, **2.6**, or **2.7**. This **does not work with Python 3**, because when porting to Python 3 I broke Python 2 compatibility, thus there will be no Python 3 compatibility.
+
 1. Clone [the repository][4] to get the files  
     `git clone git://github.com/KenanY/domainitter.git`
 2. _Completely optional and virtually useless_: get an updated list of the top one million websites by downloading [Alexa.com's list][3] (~9.60 MB). You'll need to unzip the archive, then convert the list to a plaintext file (don't change its name, or you'll break stuff).
@@ -26,3 +28,7 @@ So, for whatever reason, Pastebin has something called [Domains Center][2]. You 
    [2]: http://pastebin.com/domains (Pastebin - Domains Center)
    [3]: http://s3.amazonaws.com/alexa-static/top-1m.csv.zip (Download Alexa's list of top websites)
    [4]: https://github.com/KenanY/domainitter
+
+## Contributing
+
+This is a really small project. You can easily work on master directing, no need for complicated branches.
