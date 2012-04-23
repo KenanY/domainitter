@@ -22,7 +22,7 @@ There are no dependencies for running `domainitter.py`, but you must use Python 
 3. Run `domainitter.py`, optionally with an integer as an argument. It will be treated as the maximum number of domains you want to submit. Example: `domainitty.py 20` will only submit 20 domains  
 4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down  
 5. ????  
-6. PROFIT!!! (okay, not really)
+6. PROFIT!!! <small>(not guaranteed)</small>
 
 ## Contributing
 
@@ -30,7 +30,7 @@ This is a really small project. You can easily hack on the `master` branch direc
 
 Also, please keep `domainitter.py` [PEP 8][] compliant. Use the [pep8 tool][] to check your code.
 
-Tests are run on [Travis CI][]. Pretty much the only test is simply running the script itself, except with the argument `--keyboard` in order to skip the user input portion of the script. The current build status is displayed as a little image near the top of this README. You can check out all the builds and test [here][5].
+Tests are run on [Travis CI][]. Pretty much the only test is simply running the script itself, except with the argument `--keyboard` in order to skip the user input portion of the script. The current build status is displayed as a little image near the top of this README. You can check out all the builds [here][5].
 
 
    [1]: http://www.alexa.com/topsites
