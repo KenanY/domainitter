@@ -32,8 +32,9 @@ def submit_site(query):
 
 
 def main(args):
+    scrapsMax = 0
     autoKeyboard = False
-    
+
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
         input = open("top-1m.txt").read()
@@ -41,13 +42,16 @@ def main(args):
     else:
         print 'Error: could not find website list!'
         exit()
+
     if args[0]:
         scrapsMax = int(args[0])
     else:
         scrapsMax = 1000000
+
     for argc in args:
         if argc == '--keyboard':
             autoKeyboard = True
+
     if autoKeyboard:
         answer = '1'
     else:
@@ -56,7 +60,9 @@ def main(args):
         [1] Randomly select which websites to submit
         [2] Start from the most popular site, then work downwards'''
         answer = raw_input("> ")
+
     print '\n'
+
     if '1' in answer:
         print 'Randomly selecting sites!'
         print '=========='
