@@ -14,7 +14,7 @@ So, for whatever reason, Pastebin has something called [Domains Center][2]. You 
 
 ## Usage
 
-There are no dependencies for running `domainitter.py`, but you must use Python **2.5**, **2.6**, or **2.7**. This **does not work with Python 3**, because when porting to Python 3 I broke Python 2 compatibility, thus there will be no Python 3 support.
+`domainitter.py` relies on `argparse` for parsing arguments. As such, you must use Python **2.7**. **This does not work with Python 3**... yet.
 
 1. Clone [the repository][4] to get the files  
     `git clone git://github.com/KenanY/domainitter.git`
@@ -28,7 +28,7 @@ There are no dependencies for running `domainitter.py`, but you must use Python 
 
 This is a really small project. You can easily hack on the `master` branch directly, so no need for complicated branches. Before you code a major change/feature (if there's such a thing possible for this script), open an issue in the [Issue Tracker][] so that we can discuss whether I'd be willing to accept such a change. This ensures that you don't go off wasting your time coding a feature I don't accept.
 
-Also, please keep `domainitter.py` [PEP 8][] compliant. Use the [pep8 tool][] to check your code.
+Also, please keep `domainitter.py` as [PEP 8][] compliant as possible. Use the [pep8 tool][] to check your code.
 
 Tests are run on [Travis CI][]. Pretty much the only test is simply running the script itself, except with the argument `--keyboard` in order to skip the user input portion of the script. The current build status is displayed as a little image near the top of this README. You can check out all the builds [here][5].
 
