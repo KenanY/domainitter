@@ -37,8 +37,11 @@ def main():
     inputFile = None
     entry = None
     answer = None
-
-    parser = argparse.ArgumentParser(description='Updates domain records on Pastebin')
+    parser = argparse.ArgumentParser(
+                                     description='''Updates domain records on
+                                                    Pastebin''',
+                                     epilog='''Copyright (c) 2011-2012,
+                                               Kenan Yildirim''')
     parser.add_argument('scraps', type=int,
                         help='integer of how many domains you want to update',
                         nargs='?', default=1000000)
