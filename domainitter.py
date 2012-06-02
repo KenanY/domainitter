@@ -34,9 +34,8 @@ def submit_site(query):
 
 
 def main():
-    input = None
+    inputFile = None
     entry = None
-    scrapsMax = 0
     answer = None
 
     parser = argparse.ArgumentParser(description='Updates domain records on Pastebin')
@@ -47,12 +46,11 @@ def main():
                         help='run the script without needing keyboard input.',
                         action='store_true', default=False)
     args = parser.parse_args()
-    scrapsMax = int(args.scraps)
 
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
-        input = open("top-1m.txt").read()
-        entries = re.split("\n+", input)
+        inputFile = open("top-1m.txt").read()
+        entries = re.split("\n+", inputFile)
     else:
         print 'Error: could not find website list!'
         exit()
@@ -72,7 +70,7 @@ def main():
         print 'Randomly selecting sites!'
         print '=========='
         scraps = 1
-        while scraps <= scrapsMax:
+        while scraps <= int(args.scraps):
             entryLine = re.split("[\W]?",
                                  entries[random.randint(1, 1000000)],
                                  1)
@@ -87,7 +85,7 @@ def main():
         print '=========='
         for entry in entries:
             entryLine = re.split("[\W]?", entry, 1)
-            if int(entryLine[0]) <= scrapsMax:
+            if int(entryLine[0]) <= int(args.scraps):
                 submit_site(entryLine[1])
                 print "[%s] %s" % (str(split_thousands(entryLine[0])),
                                    entryLine[1])
