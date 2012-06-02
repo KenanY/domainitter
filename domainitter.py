@@ -10,12 +10,12 @@
 * Copyright (c) 2011-2012, Kenan Yildirim
 """
 
+import argparse
 import os.path
 import random
 import re
 import time
 from httplib import HTTPConnection
-from sys import argv
 from sys import exit
 
 
@@ -27,14 +27,27 @@ def split_thousands(s, sep=','):
 
 
 def submit_site(query):
+    """ Send a GET request to the update script """
     conn = HTTPConnection("www.pastebin.com")
     conn.request("GET", "/domain_update.php?q=%s&f=1" % query)
     conn.close()
 
 
-def main(args):
+def main():
+    input = None
+    entry = None
     scrapsMax = 0
-    autoKeyboard = False
+    answer = None
+
+    parser = argparse.ArgumentParser(description='Updates domain records on Pastebin')
+    parser.add_argument('scraps', type=int,
+                        help='integer of how many domains you want to update',
+                        nargs='?', default=1000000)
+    parser.add_argument('-k', '--keyboard',
+                        help='run the script without needing keyboard input.',
+                        action='store_true', default=False)
+    args = parser.parse_args()
+    scrapsMax = int(args.scraps)
 
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
@@ -44,16 +57,7 @@ def main(args):
         print 'Error: could not find website list!'
         exit()
 
-    if args[0]:
-        scrapsMax = int(args[0])
-    else:
-        scrapsMax = 1000000
-
-    for argc in args:
-        if argc == '--keyboard':
-            autoKeyboard = True
-
-    if autoKeyboard:
+    if args.keyboard:
         answer = '1'
     else:
         print '''Done!\n
@@ -94,4 +98,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    exit(main(argv[1:]))
+    exit(main())
