@@ -34,7 +34,6 @@ def submit_site(query):
 
 
 def main():
-    inputFile = None
     entry = None
     answer = None
     parser = argparse.ArgumentParser(
@@ -52,8 +51,8 @@ def main():
 
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
-        inputFile = open("top-1m.txt").read()
-        entries = re.split("\n+", inputFile)
+        with open('top-1m.txt') as f:
+            entries = re.split("\n+", f)
     else:
         print 'Error: could not find website list!'
         exit()
