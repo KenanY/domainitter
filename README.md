@@ -1,4 +1,4 @@
-# domainitter 
+# domainitter
 
 (formerly "Pastebin-Domains-Center-AutoSubmitter")
 
@@ -16,12 +16,12 @@ So, for whatever reason, Pastebin has something called [Domains Center][2]. You 
 
 `domainitter.py` relies on `argparse` for parsing arguments. As such, you must use Python **2.7**. **This does not work with Python 3**... yet.
 
-1. Clone [the repository][4] to get the files  
+1. Clone [the repository][4] to get the files
     `git clone git://github.com/KenanY/domainitter.git`
 2. _Completely optional and virtually useless_: get an updated list of the top one million websites by downloading [Alexa.com's list][3] (~9.60 MB). You'll need to unzip the archive, then convert the list to a plaintext file (don't change its name, or you'll break stuff).
-3. Run `domainitter.py`, optionally with an integer as an argument. It will be treated as the maximum number of domains you want to submit. Example: `domainitty.py 20` will only submit 20 domains  
-4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down  
-5. ????  
+3. Run `domainitter.py`, optionally with an integer as an argument. It will be treated as the maximum number of domains you want to submit. Example: `domainitty.py 20` will only submit 20 domains
+4. Make a choice of whether you want the script to choose websites randomly to submit, or start from the top sites then work its way down
+5. ????
 6. PROFIT!!! <small>(not guaranteed)</small>
 
 ## Contributing
