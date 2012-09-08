@@ -14,7 +14,7 @@ import argparse
 import os.path
 import random
 import re
-from httplib import HTTPConnection
+import urllib
 from sys import exit
 
 
@@ -27,9 +27,8 @@ def split_thousands(s, sep=','):
 
 def submit_site(query):
     """ Send a GET request to the update script """
-    conn = HTTPConnection("www.pastebin.com")
-    conn.request("GET", "/domain_update.php?q=%s&f=1" % query)
-    conn.close()
+    params = urllib.urlencode({'q': query, 'f': 1})
+    urllib.urlopen('http://pastebin.com' + '?' + params).read()
 
 
 def main():
