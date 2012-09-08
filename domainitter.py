@@ -28,7 +28,8 @@ def split_thousands(s, sep=','):
 def submit_site(query):
     """ Send a GET request to the update script """
     params = urllib.urlencode({'q': query, 'f': 1})
-    urllib.urlopen('http://pastebin.com' + '?' + params).read()
+    print params
+    urllib.urlopen('http://pastebin.com/domain_update.php' + '?' + params)
 
 
 def main():
