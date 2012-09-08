@@ -7,7 +7,7 @@
 * Licensed under the MIT:
 * http://www.opensource.org/licenses/mit-license.php
 *
-* Copyright (c) 2011-2012, Kenan Yildirim
+* Copyright (c) 2011–2012, Kenan Yildirim
 """
 
 import argparse
@@ -40,7 +40,7 @@ def main():
     parser = argparse.ArgumentParser(
                                      description='''Updates domain records on
                                                     Pastebin''',
-                                     epilog='''Copyright (c) 2011-2012,
+                                     epilog='''Copyright (c) 2011–2012,
                                                Kenan Yildirim''')
     parser.add_argument('scraps', type=int,
                         help='integer of how many domains you want to update',
