@@ -50,7 +50,7 @@ def main():
     print 'Parsing website list...'
     if os.path.isfile('top-1m.txt'):
         with open('top-1m.txt') as f:
-            entries = re.split("\n+", f)
+            entries = re.split("\n+", f.read())
     else:
         print 'Error: could not find website list!'
         exit()
