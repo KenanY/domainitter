@@ -14,7 +14,6 @@ import argparse
 import os.path
 import random
 import re
-import time
 from httplib import HTTPConnection
 from sys import exit
 
