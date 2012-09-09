@@ -31,8 +31,8 @@ domains automatically.
 
 ## Arguments
 
-  * '-n <int>' — Pass an integer with this flag to limit the number of domains to submit before stopping.
-  * '-k <int>' — Enter either '1' or '2' with this flag to pick between (`1`) submitting domains in random order or ('2') submitting domains in descending order.
+  * `-n <int>` — Pass an integer with this flag to limit the number of domains to submit before stopping.
+  * `-k <int>` — Enter either `1` or `2` with this flag to pick between (`1`) submitting domains in random order or (`2`) submitting domains in descending order.
 
 ## Contributing
 
